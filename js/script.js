@@ -1,34 +1,23 @@
-let ranbomBodyParts = ['Глаза', 'Волосы', 'Бедра'];
-let randomAdjective = ['Прекрасны', 'Восхитительны', 'Красивы'];
-let randomWords = ['Небо', 'Звезды', 'Море', 'Снег', 'Огонь'];
+"use strict";
 
-ranbomBodyParts = ranbomBodyParts[Math.floor(Math.random() *3)];
-randomAdjective = randomAdjective[Math.floor(Math.random() * (randomAdjective.length))];
-randomWords = randomWords[Math.floor(Math.random() * randomWords.length)];
+let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
 
-let randomСompliment = 'У тебя ' + ranbomBodyParts + ' ' + randomAdjective + ' ' + 'как' + ' ' + randomWords + '!!!';
+let personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-let randomСomplimentTwo = ['У тебя', ranbomBodyParts, randomAdjective, 'как', randomWords, '!!!'].join(' ');
+let a1 = prompt('Один из последних просмотренных фильмов?', ''),
+    a2 = prompt('На сколько оцените его?', ''),
+    a3 = prompt('Один из последних просмотренных фильмов?', ''),
+    a4 = prompt('На сколько оцените его?', '');
 
-console.log(randomСompliment);
-console.log(randomСomplimentTwo);
+personalMovieDB.movies[a1] = a2;
+personalMovieDB.movies[a3] = a4;
 
-let arr = [3, 2, 1];
-let newArr= '';
+console.log(personalMovieDB);
 
-for ( let i = 0; i < arr.length; i++){
-    newArr = newArr + arr[i] + ' больше, чем ';
-
-}
-
-console.log(newArr.slice(0, 29));
-
-
-// 
-
-let i = 41;
-
-console.log(i++);
-console.log(i);
-console.log(i--);
-console.log(i);
+alert(personalMovieDB.count);
