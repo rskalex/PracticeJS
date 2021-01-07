@@ -1,8 +1,10 @@
 "use strict";
 
-let numberOfFilms = prompt('Сколько фильмов вы уже посмотрели?', '');
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
-let personalMovieDB = {
+console.log(typeof(numberOfFilms));
+
+const personalMovieDB = {
     count: numberOfFilms,
     movies: {},
     actors: {},
@@ -10,28 +12,35 @@ let personalMovieDB = {
     privat: false
 };
 
-let a1 = prompt('Один из последних просмотренных фильмов?', ''),
-    a2 = prompt('На сколько оцените его?', ''),
-    a3 = prompt('Один из последних просмотренных фильмов?', ''),
-    a4 = prompt('На сколько оцените его?', '');
+let a, b;
+    
+for (let i = 0; i < 2; i++){
+    a = prompt('Один из последних просмотренных фильмов?', '');
+    b = prompt('На сколько оцените его?', '');
 
-personalMovieDB.movies[a1] = a2;
-personalMovieDB.movies[a3] = a4;
+    if (typeof(a) === 'string' && typeof(a) != null && typeof(b) != null && a != '' && b != '' && a.length < 5){
+        console.log('Ok!');
+        personalMovieDB.movies[a] = b;
+    } else {
+        console.log('Try again');
+        i--;
+    }
+}
+
+if(personalMovieDB.count < 10){
+    alert('Просмотрено довольно мало фильмов');
+} else if(personalMovieDB.count > 10 && personalMovieDB.count < 30){
+    alert('Вы классический зритель');
+} else if(personalMovieDB.count > 30){
+    alert('Вы киноман');
+} else {
+    alert('Произошла ошибка');
+}
 
 console.log(personalMovieDB);
 
-alert(personalMovieDB.count);
 
 
 
-if ( 1 == 2 ){
-    console.log(true);
-} else {
-    console.log(false);
-}
 
-let number = 42;
 
-for (let i = 0; i < number; i++){
-    console.log(i);
-}
