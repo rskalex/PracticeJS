@@ -21,3 +21,11 @@ personalMovieDB.movies[a3] = a4;
 console.log(personalMovieDB);
 
 alert(personalMovieDB.count);
+
+
+
+if ( 1 == 2 ){
+    console.log(true);
+} else {
+    console.log(false);
+}
