@@ -29,3 +29,9 @@ if ( 1 == 2 ){
 } else {
     console.log(false);
 }
+
+let number = 42;
+
+for (let i = 0; i < number; i++){
+    console.log(i);
+}
