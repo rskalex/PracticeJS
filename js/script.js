@@ -18,5 +18,6 @@ let a1 = prompt('Один из последних просмотренных ф�
 personalMovieDB.movies[a1] = a2;
 personalMovieDB.movies[a3] = a4;
 
+console.log(personalMovieDB);
 
 alert(personalMovieDB.count);
